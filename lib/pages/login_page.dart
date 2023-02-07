@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:proseleta/components/text_styles.dart';
+import 'package:proseleta/pages/cadastro_page.dart';
 import 'package:proseleta/pages/home_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -27,6 +28,21 @@ class _LoginPageState extends State<LoginPage> {
             key: _formKey,
             child: Column(
               children: [
+                TextFormField(
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    label: Text('E-mail'),
+                    hintText: 'email@hotmail.com',
+                  ),
+                  validator: (email){
+                    if(email == null || email.isEmpty){
+                      return 'Digite seu e-mail';
+                    }
+                    return null;
+                  },
+                ),
+                SizedBox(height: 20,),
                 TextFormField(
                   controller: _emailController,
                   decoration: InputDecoration(
@@ -85,11 +101,9 @@ class _LoginPageState extends State<LoginPage> {
                 TextButton(
                   child: Text('Não possui conta? Faça seu cadastro!'),
                   onPressed:() {
-                      if(_formKey.currentState!.validate()){
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => HomePage())
-                        );
-                      }
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => CadastroPage())
+                      );
                     },
                 ),
               ],

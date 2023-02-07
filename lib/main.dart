@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proseleta/pages/cadastro_page.dart';
 import 'package:proseleta/pages/editais_page.dart';
 import 'package:proseleta/pages/home_page.dart';
 import 'package:proseleta/pages/login_page.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginPage(),
+      home: const CadastroPage(),
       debugShowCheckedModeBanner: false,
     );
   }
