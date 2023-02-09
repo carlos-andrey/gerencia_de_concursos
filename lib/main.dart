@@ -4,6 +4,7 @@ import 'package:proseleta/pages/editais_page.dart';
 import 'package:proseleta/pages/home_page.dart';
 import 'package:proseleta/pages/login_page.dart';
 import 'package:proseleta/pages/pedidos_insensao_page.dart';
+import 'package:proseleta/pages/splash_page.dart';
 
 import 'pages/chart.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const CadastroPage(),
+      home: const SplashPage(),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:proseleta/components/text_styles.dart';
 import 'package:proseleta/pages/cadastro_page.dart';
 import 'package:proseleta/pages/home_page.dart';
@@ -13,7 +11,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  var _showPassword = false;
+  bool isChecked = false;
+  bool _showPassword = false;
   final _formKey = GlobalKey<FormState>();
   final _senhaController = TextEditingController();
   final _emailController = TextEditingController();
@@ -28,19 +27,10 @@ class _LoginPageState extends State<LoginPage> {
             key: _formKey,
             child: Column(
               children: [
-                TextFormField(
-                  controller: _emailController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    label: Text('E-mail'),
-                    hintText: 'email@hotmail.com',
-                  ),
-                  validator: (email){
-                    if(email == null || email.isEmpty){
-                      return 'Digite seu e-mail';
-                    }
-                    return null;
-                  },
+                Icon(
+                  Icons.account_circle,
+                  size: 160,
+                  color: Colors.blue,
                 ),
                 SizedBox(height: 20,),
                 TextFormField(
@@ -98,6 +88,22 @@ class _LoginPageState extends State<LoginPage> {
                     },
                   ),
                 ),
+                SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Checkbox(
+                      value: isChecked, 
+                      onChanged: (bool? value){
+                        setState(() {
+                          isChecked = value!;
+                        });
+                      },
+                    ),
+                    CustomBodyText(data: 'Manter-se logado')
+                  ],
+                ),
+                SizedBox(height: 20,),
                 TextButton(
                   child: Text('Não possui conta? Faça seu cadastro!'),
                   onPressed:() {
@@ -105,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                         MaterialPageRoute(builder: (context) => CadastroPage())
                       );
                     },
-                ),
+                  ),
               ],
             ),
           ),

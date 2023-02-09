@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:proseleta/pages/home_page.dart';
+import 'package:proseleta/pages/login_page.dart';
 
 import '../components/text_styles.dart';
 
@@ -166,6 +167,15 @@ class _CadastroPageState extends State<CadastroPage> {
                     },
                   ),
                 ),
+                SizedBox(height: 20,),
+                TextButton(
+                  child: Text('Já possui conta? Faça seu Log in!'),
+                  onPressed:() {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => LoginPage())
+                      );
+                    },
+                  ),
               ],
             ),
           ),
