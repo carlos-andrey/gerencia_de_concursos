@@ -14,7 +14,7 @@ class CustomTitleText extends StatelessWidget {
     return Text(
       data,
       style: TextStyle(
-        color: cor_aprovado,
+        color: cor_preta,
         fontStyle: FontStyle.italic,
         fontWeight: FontWeight.bold,
         fontSize: 30
