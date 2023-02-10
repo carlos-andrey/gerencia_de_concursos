@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proseleta/components/text_styles.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:intl/intl.dart';
 
@@ -18,7 +19,6 @@ class _DashBoardPageState extends State<DashBoardPage> {
   void initState() {
     _trackballBehavior = TrackballBehavior(
       enable: true,
-      
     );
     _chartData = getChartsdata();
     _chartData1 = getChartsdata1();
@@ -28,6 +28,9 @@ class _DashBoardPageState extends State<DashBoardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: CustomTitleText(data: 'Graficos'),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
