@@ -40,22 +40,22 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home, color: cor_preta),
             label: 'Home',
             backgroundColor: cor_azul,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.newspaper),
+            icon: Icon(Icons.newspaper, color: cor_preta),
             label: 'Editais',
             backgroundColor: cor_azul,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bar_chart),
+            icon: Icon(Icons.bar_chart, color: cor_preta,),
             label: 'Dashboard?',
             backgroundColor: cor_azul,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.settings, color: cor_preta),
             label: 'Settings',
             backgroundColor: cor_azul,
           ),
