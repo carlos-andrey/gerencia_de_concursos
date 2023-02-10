@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:proseleta/components/text_styles.dart';
 
 class EditaisListPage extends StatefulWidget {  
   const EditaisListPage({super.key});
@@ -21,7 +22,7 @@ class _EditaisListPageState extends State<EditaisListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lista de Editais'),
+        title: CustomTitleText(data:'Lista de Editais'),
       ),
       body: ListView.separated(
         itemCount: image_list.length,
